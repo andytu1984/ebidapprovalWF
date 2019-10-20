@@ -1,0 +1,47 @@
+{
+    "id": "managerapproval",
+    "name": "ManagerApproval",
+    "revision": "1.0",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "bid_id",
+            "type": "string",
+            "label": "Bid ID",
+            "readOnly": true,
+            "value": "${context.BidId}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "bid_content",
+            "type": "string",
+            "label": "Bidding Content",
+            "readOnly": true,
+            "value": "${context.BidInfo.d.Context}",
+            "control": {
+                "type": "TextArea",
+                "properties": {
+                    "height": "medium"
+                }
+            },
+            "constraints": {
+                "required": false
+            }
+        }
+    ],
+    "decisions": [
+        {
+            "id": "approve",
+            "text": "Approve",
+            "decisionType": "positive"
+        },
+        {
+            "id": "reject",
+            "text": "Reject",
+            "decisionType": "negative"
+        }
+    ]
+}
